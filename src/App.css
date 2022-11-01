@@ -1,38 +1,359 @@
-.App {
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  scroll-behavior: smooth;
+}
+
+.header{
+  width: 100%;
+  float: left;
+  background: rgb(62, 40, 87);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 20vh;
+}
+
+.header h1{
+  color: white;
+  text-transform: uppercase;
+  font-size: 48px;
+  float: left;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header .form-container{
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header form{
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  float: left;
+  width: 500px;
+  border: 1px solid rgb(80, 68, 116);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header form input{
+  padding: 15px 20px;
+  border: none;
+  background: white;
+  color: rgb(80, 68, 116);
+  font-size: 18px;
+  width: 80%;
+}
+
+.header form button{
+  padding: 8px 15px;
+  border: none;
+  background: rgb(80, 68, 116);
+  color: white;
+  font-size: 18px;
+  border: 1px solid rgb(80, 68, 116);
+  width: 20%;
+  cursor: pointer;
+}
+
+.App{
+  width: 100%;
+  background: rgb(80, 68, 116);
+  display: flex;
+  float: left;
+  justify-content: center;
+  padding: 50px 100px;
+  height: 80vh;
+}
+
+.container{
+  float: left;
+  overflow: hidden;
+  overflow-y: scroll;
+  justify-content: center;
+  padding: 0px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.invalid{
+  color: white;
+  font-size: 30px;
+}
+
+.loader{
+  float: left;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner{
+  border: 5px solid rgb(62, 40, 87);
+  border-radius: 50%;
+  border-top: 5px solid white;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card{
+  float: left;
+  background: white;
+  width: 24%;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px rgb(26, 26, 26);
+  gap: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-height: 300px;
+  transition: .4s;
 }
 
-.App-link {
-  color: #61dafb;
+.card h4{
+  font-size: 30px;
+  color: rgb(80, 68, 116);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card h6{
+  font-size: 22px;
+  color: rgb(80, 68, 116);
+}
+
+.card a{
+  font-size: 18px;
+  color: rgb(80, 68, 116);
+}
+
+
+@media screen and (max-width: 1440px) {
+
+  .header{
+    display: flex;
+    padding: 20px 100px;
+    height: 18vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header h1{
+    text-transform: capitalize;
+    font-size: 38px;
+    width: 100%;
   }
+
+  .header .form-container{
+    margin-top: 10px;
+  }
+  
+  .header form{
+    width: 60%;
+  }
+  
+  .header form input{
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .header form button{
+    font-size: 16px;
+  }
+
+  .App{
+    padding: 20px 50px;
+    height: 82vh;
+    margin-top: 1;
+  }
+  
+  .container{
+    padding: 0px;
+  }
+  
+  .invalid{
+    font-size: 28px;
+  }
+  
+  .card{
+    width: 48%;
+    padding: 30px;
+    gap: 15px;
+    max-height: 220px;
+  }
+  
+  .card h4{
+    font-size: 32px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card h6{
+    font-size: 24px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card a{
+    font-size: 18px;
+    color: rgb(80, 68, 116);
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .header{
+    display: flex;
+    padding: 20px 50px;
+    height: 18vh;
+  }
+
+  .header h1{
+    text-transform: capitalize;
+    font-size: 32px;
+    width: 100%;
+  }
+
+  .header .form-container{
+    margin-top: 10px;
+  }
+  
+  .header form{
+    width: 100%;
+  }
+  
+  .header form input{
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .header form button{
+    font-size: 16px;
+  }
+
+  .App{
+    padding: 20px 50px;
+    height: 82vh;
+    margin-top: 1;
+  }
+  
+  .container{
+    padding: 0px;
+  }
+  
+  .invalid{
+    font-size: 24px;
+  }
+  
+  .card{
+    width: 100%;
+    padding: 30px;
+    gap: 15px;
+    max-height: 220px;
+  }
+  
+  .card h4{
+    font-size: 32px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card h6{
+    font-size: 24px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card a{
+    font-size: 18px;
+    color: rgb(80, 68, 116);
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .header{
+    display: flex;
+    padding: 20px 20px;
+    height: 15vh;
+  }
+
+  .header h1{
+    text-transform: capitalize;
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .header .form-container{
+    margin-top: 10px;
+  }
+  
+  .header form{
+    width: 100%;
+  }
+  
+  .header form input{
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  
+  .header form button{
+    font-size: 16px;
+  }
+
+  .App{
+    padding: 20px;
+    height: 85vh;
+    margin-top: 1;
+  }
+  
+  .container{
+    padding: 0px;
+  }
+  
+  .invalid{
+    font-size: 20px;
+  }
+  
+  .card{
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+    max-height: 220px;
+  }
+  
+  .card h4{
+    font-size: 28px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card h6{
+    font-size: 20px;
+    color: rgb(80, 68, 116);
+  }
+  
+  .card a{
+    font-size: 16px;
+    color: rgb(80, 68, 116);
+  }
+
 }
